@@ -1,0 +1,175 @@
+#root {
+  width: 100%;
+}
+
+main {
+  min-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+
+  color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+
+  position: relative;
+}
+
+
+main::before {
+  content: "";
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(10, 35, 5, 0.75),
+      rgba(10, 35, 5, 0.75)
+    ),
+    url('/WALL.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+filter: contrast(1.4) brightness(2) saturate(0.7);
+
+  z-index: 0;
+}
+main > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header p {
+  color: #b8ff00;
+  font-weight: bold;
+  letter-spacing: 7px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 12px rgba(184, 255, 0, 0.8);
+}
+
+h1 {
+  font-size: 52px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #b8ff00;
+  text-shadow:
+    4px 4px 0 #ff304f,
+    0 0 25px rgba(184, 255, 0, 0.25);
+}
+
+
+
+.showcase {
+  max-width: 1000px;
+  min-height: 550px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+
+
+.character {
+  width: 450px;
+  height: 500px;
+  border: 2px solid #b8ff00;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(184, 255, 0, 0.08),
+      rgba(255, 48, 79, 0.05)
+    );
+
+  box-shadow:
+    0 0 12px rgba(184, 255, 0, 0.7),
+    0 0 45px rgba(184, 255, 0, 0.15);
+
+  overflow: hidden;
+  position: relative;
+}
+
+
+.character::before {
+  content: "";
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: #ff304f;
+  opacity: 0.12;
+
+  filter: blur(50px);
+}
+
+
+
+.character img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.description {
+  max-width: 400px;
+
+  border-left: 4px solid #ff304f;
+  padding-left: 25px;
+}
+
+.description h2 {
+  font-size: 30px;
+  color: #b8ff00;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 12px rgba(184, 255, 0, 0.6);
+}
+
+.description p {
+  color: #d4d4d4;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+
+
+@media (max-width: 800px) {
+  .showcase {
+    flex-direction: column;
+  }
+
+  .character {
+    width: 90%;
+    height: 450px;
+  }
+
+  h1 {
+    font-size: 38px;
+  }
+}
